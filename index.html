@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menjaga & Membangun Republik — Rangkuman Sejarah XII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFF8ED;
+    --paper: #FFFFFF;
+    --ink: #211A17;
+    --ink-soft: #5B4F49;
+    --merah: #D7263D;
+    --merah-soft: #FCE4E7;
+    --biru: #1D6FA5;
+    --biru-soft: #E2F0F8;
+    --hijau: #2D8659;
+    --hijau-soft: #E1F3E9;
+    --emas: #E8A33D;
+    --emas-soft: #FCEFD9;
+    --line: #EFE3D3;
+    --shadow: 0 10px 30px rgba(33, 26, 23, 0.08);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --cream: #201A16;
+      --paper: #2A2320;
+      --ink: #F5ECE3;
+      --ink-soft: #C9B8AC;
+      --merah-soft: #3B2024;
+      --biru-soft: #1C2E38;
+      --hijau-soft: #1B2E24;
+      --emas-soft: #372A18;
+      --line: #40342C;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --cream: #201A16;
+    --paper: #2A2320;
+    --ink: #F5ECE3;
+    --ink-soft: #C9B8AC;
+    --merah-soft: #3B2024;
+    --biru-soft: #1C2E38;
+    --hijau-soft: #1B2E24;
+    --emas-soft: #372A18;
+    --line: #40342C;
+    --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px 100px; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: 64px 24px 48px;
+    text-align: left;
+    overflow: hidden;
+  }
+  .flag-strip {
+    position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, var(--merah) 0 50%, var(--paper) 50% 100%);
+    opacity: 0.9;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 14px; color: var(--merah); font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--merah); }
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 700;
+    max-width: 14ch;
+    margin: 0 0 16px;
+  }
+  .hero p.sub {
+    font-size: 17px; color: var(--ink-soft); max-width: 55ch; margin: 0;
+  }
+
+  /* TOC */
+  .toc {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    margin: 36px 0 8px;
+  }
+  .toc a {
+    text-decoration: none; color: var(--ink);
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 14px; padding: 14px 16px;
+    display: flex; flex-direction: column; gap: 4px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .toc a:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .toc .num { font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; }
+  .toc .lbl { font-size: 12.5px; color: var(--ink-soft); }
+  .toc a.b1 .num { color: var(--merah); }
+  .toc a.b2 .num { color: var(--biru); }
+  .toc a.b3 .num { color: var(--hijau); }
+
+  /* SECTIONS */
+  section.bab {
+    margin-top: 64px;
+    scroll-margin-top: 24px;
+  }
+  .bab-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 6px;
+  }
+  .bab-badge {
+    font-family: 'Fraunces', serif; font-weight: 800; font-size: 15px;
+    padding: 4px 12px; border-radius: 100px; white-space: nowrap;
+  }
+  .b1 .bab-badge { background: var(--merah-soft); color: var(--merah); }
+  .b2 .bab-badge { background: var(--biru-soft); color: var(--biru); }
+  .b3 .bab-badge { background: var(--hijau-soft); color: var(--hijau); }
+  .bab h2 { font-size: 26px; font-weight: 700; margin: 0; }
+  .bab-desc { color: var(--ink-soft); font-size: 15px; margin: 10px 0 28px; max-width: 60ch; }
+
+  h3.sub {
+    font-size: 18px; font-weight: 600; margin: 32px 0 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .b1 h3.sub::before { content: ""; width: 18px; height: 18px; border-radius: 6px; background: var(--merah); flex-shrink: 0; }
+  .b2 h3.sub::before { content: ""; width: 18px; height: 18px; border-radius: 6px; background: var(--biru); flex-shrink: 0; }
+  .b3 h3.sub::before { content: ""; width: 18px; height: 18px; border-radius: 6px; background: var(--hijau); flex-shrink: 0; }
+
+  ul.points { padding-left: 0; list-style: none; margin: 0 0 20px; }
+  ul.points li {
+    position: relative; padding-left: 22px; margin-bottom: 12px; font-size: 15.5px;
+  }
+  ul.points li::before {
+    content: "—"; position: absolute; left: 0; color: var(--ink-soft);
+  }
+  ul.points b, ul.points strong { color: var(--ink); }
+  .b1 ul.points b { color: var(--merah); }
+  .b2 ul.points b { color: var(--biru); }
+  .b3 ul.points b { color: var(--hijau); }
+
+  /* CHIPS */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 24px; }
+  .chip {
+    font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 100px;
+    border: 1px solid var(--line);
+  }
+  .b1 .chip { background: var(--merah-soft); color: var(--merah); border-color: transparent; }
+  .b2 .chip { background: var(--biru-soft); color: var(--biru); border-color: transparent; }
+  .b3 .chip { background: var(--hijau-soft); color: var(--hijau); border-color: transparent; }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 22px 0;
+    box-shadow: var(--shadow);
+  }
+  .callout .tag {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    margin-bottom: 8px; display: block;
+  }
+  .b1 .callout .tag { color: var(--merah); }
+  .b2 .callout .tag { color: var(--biru); }
+  .b3 .callout .tag { color: var(--hijau); }
+  .callout p { margin: 0 0 8px; font-size: 15px; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* TIMELINE */
+  .timeline { margin: 26px 0 30px; }
+  .tl-item {
+    display: grid; grid-template-columns: 84px 20px 1fr; gap: 4px;
+    align-items: start; margin-bottom: 4px;
+  }
+  .tl-date { font-weight: 700; font-size: 13.5px; color: var(--merah); padding-top: 2px; text-align: right; padding-right: 8px; }
+  .tl-line { display: flex; flex-direction: column; align-items: center; height: 100%; }
+  .tl-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--merah); margin-top: 4px; flex-shrink: 0; }
+  .tl-bar { width: 2px; flex: 1; background: var(--line); margin-top: 2px; }
+  .tl-item:last-child .tl-bar { display: none; }
+  .tl-text { padding-bottom: 20px; font-size: 14.5px; }
+  .tl-text b { display: block; font-size: 15px; margin-bottom: 2px; }
+
+  /* GRID CARDS (pemberontakan) */
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 28px; }
+  .mini-card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: 14px 16px;
+  }
+  .mini-card .yr { font-size: 12px; font-weight: 700; color: var(--biru); }
+  .mini-card .nm { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15.5px; margin: 3px 0 4px; }
+  .mini-card .ds { font-size: 13px; color: var(--ink-soft); }
+
+  /* QUOTE / definition box */
+  .term-box {
+    border-left: 4px solid var(--emas);
+    background: var(--emas-soft);
+    padding: 14px 18px; border-radius: 0 14px 14px 0; margin: 20px 0;
+    font-size: 14.5px;
+  }
+  .term-box b { color: var(--ink); }
+
+  hr.div {
+    border: none; height: 1px; background: var(--line); margin: 56px 0;
+  }
+
+  /* QUIZ */
+  .quiz { margin-top: 60px; }
+  .quiz-head { text-align: left; margin-bottom: 22px; }
+  .quiz-head .eyebrow { color: var(--hijau); }
+  .quiz-head .eyebrow .dot { background: var(--hijau); }
+  .q-item {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px 20px; margin-bottom: 14px; box-shadow: var(--shadow);
+  }
+  .q-item .q-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--hijau-soft); color: var(--hijau); font-weight: 700; font-size: 13px;
+    margin-right: 10px;
+  }
+  .q-item p.q-text { display: inline; font-size: 15.5px; font-weight: 600; }
+  details.ans { margin-top: 10px; margin-left: 36px; }
+  details.ans summary {
+    cursor: pointer; font-size: 13.5px; font-weight: 600; color: var(--hijau);
+    list-style: none;
+  }
+  details.ans summary::-webkit-details-marker { display: none; }
+  details.ans summary::before { content: "▸ "; }
+  details.ans[open] summary::before { content: "▾ "; }
+  details.ans .ans-text {
+    margin-top: 8px; font-size: 14px; color: var(--ink-soft); line-height: 1.6;
+  }
+
+  footer.note {
+    margin-top: 50px; text-align: center; font-size: 12.5px; color: var(--ink-soft);
+  }
+
+  @media (max-width: 560px) {
+    .toc { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr; }
+    .tl-item { grid-template-columns: 66px 18px 1fr; }
+    .tl-date { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="flag-strip"></div>
+  <div class="wrap" style="padding:0;">
+    <span class="eyebrow"><span class="dot"></span>Sejarah Indonesia · Kelas XII · Nipp</span>
+    <h1>Menjaga & Membangun Republik</h1>
+    <p class="sub">Rangkuman perjalanan Indonesia dari mempertahankan kemerdekaan, gonjang-ganjing demokrasi parlementer, hingga terpusatnya kekuasaan di masa Demokrasi Terpimpin (1945–1965-an).</p>
+
+    <div class="toc">
+      <a class="b1" href="#bab1"><span class="num">Bab 1</span><span class="lbl">Mempertahankan Kemerdekaan</span></a>
+      <a class="b2" href="#bab2"><span class="num">Bab 2</span><span class="lbl">Demokrasi Liberal</span></a>
+      <a class="b3" href="#bab3"><span class="num">Bab 3</span><span class="lbl">Demokrasi Terpimpin</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ===================== BAB 1 ===================== -->
+  <section class="bab b1" id="bab1">
+    <div class="bab-head"><span class="bab-badge">BAB 1</span></div>
+    <h2>Upaya Mempertahankan Kemerdekaan dan Kehidupan Pasca-Kemerdekaan</h2>
+    <p class="bab-desc">Proklamasi 17 Agustus 1945 bukan akhir perjuangan — Belanda (lewat NICA) berusaha kembali berkuasa. Bangsa Indonesia menempuh dua jalur sekaligus: senjata dan meja perundingan, sambil menghadapi gejolak sosial di dalam negeri sendiri.</p>
+
+    <h3 class="sub">Perjuangan Fisik & Jalur Diplomasi</h3>
+    <ul class="points">
+      <li><b>Perjuangan fisik</b> berlangsung di berbagai kota — Surabaya (10 November 1945), Bandung Lautan Api, Ambarawa, Medan Area — sebagai respons rakyat terhadap upaya Sekutu/NICA menguasai kembali wilayah RI.</li>
+      <li>Di sisi lain, para diplomat menempuh <b>jalur perundingan</b> agar kedaulatan diakui dunia internasional tanpa terus-menerus mengorbankan nyawa.</li>
+      <li>Pola yang berulang: <b>perundingan → disepakati → dilanggar Belanda lewat agresi militer → perundingan baru</b>. Pahami polanya, bukan cuma hafal tanggalnya.</li>
+    </ul>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Nov 1946</div>
+        <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+        <div class="tl-text"><b>Perundingan Linggarjati</b>Belanda mengakui <i>de facto</i> kedaulatan RI atas Jawa, Madura & Sumatra. Disepakati Maret 1947, namun kemudian dilanggar.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jul 1947</div>
+        <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+        <div class="tl-text"><b>Agresi Militer Belanda I</b>Melanggar hasil Linggarjati; Belanda menduduki wilayah-wilayah perkebunan & ekonomi strategis.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jan 1948</div>
+        <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+        <div class="tl-text"><b>Perundingan Renville</b>Di atas kapal AS, USS Renville. RI terpaksa mengakui <b>Garis Van Mook</b> — wilayah kekuasaan RI makin sempit, memicu jatuhnya Kabinet Amir Syarifuddin.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Des 1948</div>
+        <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+        <div class="tl-text"><b>Agresi Militer Belanda II</b>Yogyakarta diserang, Soekarno–Hatta ditangkap & diasingkan. Sebagai respons, dibentuk <b>PDRI</b> (Pemerintahan Darurat Republik Indonesia) di Sumatra oleh Syafruddin Prawiranegara agar RI tetap "hidup" secara hukum.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mei 1949</div>
+        <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+        <div class="tl-text"><b>Perundingan Roem–Royen</b>Penghentian tembak-menembak & pengembalian pemerintahan RI ke Yogyakarta — membuka jalan menuju perundingan final.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Des 1949</div>
+        <div class="tl-line"><div class="tl-dot"></div></div>
+        <div class="tl-text"><b>Konferensi Meja Bundar (KMB)</b>Digelar di Den Haag; Belanda akhirnya mengakui kedaulatan Republik Indonesia Serikat (RIS) pada 27 Desember 1949.</div>
+      </div>
+    </div>
+
+    <div class="chips">
+      <span class="chip">Agresi Militer</span>
+      <span class="chip">De facto vs De jure</span>
+      <span class="chip">Garis Van Mook</span>
+      <span class="chip">PDRI</span>
+      <span class="chip">RIS</span>
+    </div>
+
+    <h3 class="sub">Dinamika Sosial Pasca-Kemerdekaan: "Masa Bersiap"</h3>
+    <ul class="points">
+      <li><b>Masa Bersiap</b> adalah periode gejolak sosial (sekitar September 1945–awal 1946) ketika semangat revolusi bercampur dengan kemarahan dan kekerasan spontan rakyat terhadap kelompok yang dianggap dekat dengan kolonial — orang Belanda, Indo-Eropa, hingga etnis Tionghoa.</li>
+      <li>Fenomena ini menunjukkan bahwa revolusi kemerdekaan tidak hanya "rakyat melawan penjajah", tetapi juga memunculkan <b>gejolak di dalam masyarakat sendiri</b> akibat trauma kolonial dan ketegangan sosial yang lama terpendam.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="tag">Studi Kasus</span>
+      <p><b>Peristiwa Gedoran Depok.</b> Komunitas "Belanda Depok" — keturunan budak yang dimerdekakan dan diberi hak tanah oleh tuan tanah Cornelis Chastelein pada abad ke-18 — diserang oleh laskar dan pemuda revolusioner. Mereka dianggap mewarisi privilese ala kolonial (tanah, marga Belanda, status sosial) sehingga menjadi sasaran kemarahan massa, meski secara historis posisi mereka jauh lebih kompleks daripada sekadar "pro-Belanda".</p>
+    </div>
+
+    <div class="callout">
+      <span class="tag">Studi Kasus</span>
+      <p><b>Repatriasi warga Eropa/Belanda.</b> Ribuan warga Belanda dan Indo-Eropa memilih atau terpaksa "dipulangkan" (repatriasi) ke Belanda karena situasi keamanan yang tidak menentu serta perubahan status kewarganegaraan pasca kedaulatan diakui. Proses ini berlangsung bertahun-tahun hingga pertengahan 1950-an dan mengubah komposisi sosial banyak kota di Indonesia.</p>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ===================== BAB 2 ===================== -->
+  <section class="bab b2" id="bab2">
+    <div class="bab-head"><span class="bab-badge">BAB 2</span></div>
+    <h2>Kehidupan Politik Indonesia di Awal Kemerdekaan (Masa Demokrasi Liberal)</h2>
+    <p class="bab-desc">Setelah RIS dibubarkan dan Indonesia kembali menjadi negara kesatuan (17 Agustus 1950), Indonesia menjalankan sistem <b>demokrasi parlementer</b> selama kurang lebih satu dekade (1949–1959) — periode paling demokratis sekaligus paling bergejolak dalam sejarah politik Indonesia.</p>
+
+    <h3 class="sub">Perkembangan Politik & Pemerintahan</h3>
+    <ul class="points">
+      <li>Landasan hukumnya adalah <b>UUDS 1950</b> (UUD Sementara), yang menganut sistem <b>kabinet parlementer</b> — pemerintah (kabinet) bertanggung jawab kepada DPR, bukan kepada presiden.</li>
+      <li>Sistem multipartai membuat kabinet mudah jatuh karena mosi tidak percaya. Dalam kurun 1950–1959 tercatat <b>tujuh kabinet berbeda</b> (a.l. Natsir, Sukiman, Wilopo, Ali Sastroamidjojo I & II, Burhanuddin Harahap, Djuanda) — rata-rata usianya kurang dari setahun.</li>
+      <li>Puncak demokrasi periode ini adalah <b>Pemilu 1955</b>, pemilu bebas pertama di Indonesia, digelar dua tahap: memilih anggota DPR (September) dan anggota <b>Konstituante</b> (Desember) — lembaga yang bertugas menyusun UUD permanen.</li>
+      <li>Empat partai besar hasil Pemilu 1955: <b>PNI, Masyumi, NU,</b> dan <b>PKI</b> — namun tak satu pun meraih mayoritas mutlak.</li>
+      <li><b>Kegagalan Konstituante</b> menyusun UUD baru (karena kebuntuan ideologis) menjadi salah satu alasan utama Presiden Soekarno mengeluarkan Dekrit 1959 di Bab 3.</li>
+    </ul>
+
+    <div class="term-box"><b>Kabinet parlementer</b> berbeda dengan kabinet presidensial: di sini kabinet dipimpin Perdana Menteri dan bisa dijatuhkan DPR melalui mosi tidak percaya — presiden hanya berperan sebagai kepala negara simbolik pada periode ini.</div>
+
+    <h3 class="sub">Ancaman Disintegrasi Bangsa (1945–1950-an)</h3>
+    <ul class="points">
+      <li>Kondisi politik yang belum stabil dan ketimpangan pusat–daerah membuka celah bagi berbagai <b>pemberontakan bersenjata</b> yang mengancam keutuhan NKRI.</li>
+    </ul>
+
+    <div class="card-grid">
+      <div class="mini-card"><div class="yr">1948</div><div class="nm">PKI Madiun</div><div class="ds">Dipimpin Muso, mencoba mendirikan negara komunis di Madiun; ditumpas TNI.</div></div>
+      <div class="mini-card"><div class="yr">1949–1962</div><div class="nm">DI/TII</div><div class="ds">Kartosuwiryo (Jabar) ingin negara Islam; menjalar ke Aceh, Sulsel, Kalsel.</div></div>
+      <div class="mini-card"><div class="yr">1950</div><div class="nm">APRA</div><div class="ds">Milisi pimpinan Westerling menyerbu Bandung, ingin pertahankan negara federal.</div></div>
+      <div class="mini-card"><div class="yr">1950</div><div class="nm">Andi Aziz</div><div class="ds">Pemberontakan di Makassar, menolak masuknya TNI ke Sulawesi.</div></div>
+      <div class="mini-card"><div class="yr">1950</div><div class="nm">RMS</div><div class="ds">Soumokil memproklamasikan Republik Maluku Selatan, ingin lepas dari RIS.</div></div>
+      <div class="mini-card"><div class="yr">1957–1958</div><div class="nm">PRRI/Permesta</div><div class="ds">Pemberontakan daerah (Sumatra & Sulawesi) akibat kecemburuan alokasi pembangunan pusat–daerah.</div></div>
+    </div>
+
+    <div class="callout">
+      <span class="tag">Konsep Kunci</span>
+      <p>Perhatikan <b>pola motif</b> di balik pemberontakan-pemberontakan ini: ada yang berbasis <b>ideologi</b> (PKI Madiun = komunisme, DI/TII = negara Islam), ada yang berbasis <b>kepentingan kolonial lama</b> (APRA, Andi Aziz — bekas KNIL yang ingin pertahankan negara federal bentukan Belanda), dan ada yang berbasis <b>ketimpangan pusat-daerah</b> (RMS, PRRI/Permesta). Tiga motif ini sering muncul sebagai soal analisis di ujian.</p>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ===================== BAB 3 ===================== -->
+  <section class="bab b3" id="bab3">
+    <div class="bab-head"><span class="bab-badge">BAB 3</span></div>
+    <h2>Masa Demokrasi Terpimpin</h2>
+    <p class="bab-desc">Kegagalan Konstituante dan ketidakstabilan kabinet mendorong Presiden Soekarno mengambil alih kendali politik secara penuh sejak 1959 — mengakhiri era demokrasi parlementer dan membuka periode kekuasaan yang jauh lebih terpusat.</p>
+
+    <h3 class="sub">Awal Mula: Dekrit Presiden 5 Juli 1959</h3>
+    <ul class="points">
+      <li>Berisi tiga poin utama: <b>(1)</b> pembubaran Konstituante, <b>(2)</b> berlakunya kembali <b>UUD 1945</b> menggantikan UUDS 1950, dan <b>(3)</b> pembentukan MPRS (Majelis Permusyawaratan Rakyat Sementara) serta DPAS (Dewan Pertimbangan Agung Sementara).</li>
+      <li>Sejak dekrit ini, Indonesia meninggalkan sistem parlementer dan kembali ke sistem presidensial versi UUD 1945 — namun dalam praktiknya kekuasaan presiden menjadi jauh lebih besar dari yang dirancang konstitusi.</li>
+    </ul>
+
+    <h3 class="sub">Kondisi Politik, Ekonomi, Sosial & Budaya</h3>
+    <ul class="points">
+      <li><b>Politik:</b> kekuasaan terpusat di tangan Presiden Soekarno, disokong konsep <b>NASAKOM</b> (Nasionalis–Agama–Komunis) yang mempertemukan tiga kekuatan besar — namun secara nyata memperkuat pengaruh <b>PKI</b> dan <b>ABRI (militer)</b> sebagai dua pilar kekuasaan.</li>
+      <li><b>Politik luar negeri:</b> bercorak "politik mercusuar" — proyek-proyek besar untuk prestise internasional, ditambah <b>Konfrontasi dengan Malaysia</b> ("Ganyang Malaysia") dan keluarnya Indonesia dari keanggotaan PBB pada 1965 sebagai bentuk sikap anti-imperialisme.</li>
+      <li><b>Ekonomi:</b> kondisi memburuk drastis — inflasi melambung tinggi, produksi pangan menurun, dan devisa negara terkuras oleh proyek mercusuar serta konfrontasi militer. Program <b>Deklarasi Ekonomi (Dekon)</b> 1963 gagal memperbaiki keadaan.</li>
+      <li><b>Sosial-budaya:</b> muncul mobilisasi massa besar-besaran dan kecenderungan <b>kultus individu</b> terhadap Soekarno, diperkuat doktrin <b>Manipol-USDEK</b> (Manifesto Politik – Undang-Undang Dasar 1945, Sosialisme Indonesia, Demokrasi Terpimpin, Ekonomi Terpimpin, Kepribadian Indonesia) sebagai haluan negara.</li>
+    </ul>
+
+    <div class="term-box"><b>Demokrasi Terpimpin</b> bukan berarti "tanpa demokrasi" secara formal — lembaga-lembaga negara tetap ada — tetapi kekuasaan pengambilan keputusan sesungguhnya terpusat pada figur presiden, jauh dari prinsip <i>checks and balances</i>.</div>
+
+    <div class="callout">
+      <span class="tag">Penutup Periode</span>
+      <p>Ketegangan politik antara PKI, ABRI, dan kekuatan lain yang tumbuh sepanjang masa ini akhirnya memuncak pada peristiwa <b>G30S tahun 1965</b>, yang menjadi titik balik menuju runtuhnya kekuasaan Soekarno dan lahirnya era Orde Baru — babak baru yang biasanya dibahas pada bab tersendiri.</p>
+    </div>
+  </section>
+
+  <!-- ===================== QUIZ ===================== -->
+  <section class="quiz">
+    <div class="quiz-head">
+      <span class="eyebrow"><span class="dot"></span>Uji Pemahaman</span>
+      <h2 style="font-size:22px;margin:8px 0 0;">Coba Jawab Dulu Sebelum Buka Kuncinya</h2>
+    </div>
+
+    <div class="q-item">
+      <span class="q-num">1</span><p class="q-text">Mengapa hasil Perundingan Renville dianggap lebih merugikan Indonesia dibanding Perundingan Linggarjati?</p>
+      <details class="ans">
+        <summary>Lihat kunci jawaban</summary>
+        <div class="ans-text">Karena melalui Garis Van Mook yang disepakati di Renville, wilayah kekuasaan de facto RI menyusut jauh lebih sempit dibanding batas yang diakui pada Linggarjati — sehingga dianggap sebagai kemunduran diplomasi dan memicu jatuhnya Kabinet Amir Syarifuddin.</div>
+      </details>
+    </div>
+
+    <div class="q-item">
+      <span class="q-num">2</span><p class="q-text">Apa perbedaan mendasar antara pemberontakan yang bermotif ideologi (seperti DI/TII) dengan yang bermotif ketimpangan pusat-daerah (seperti PRRI/Permesta)?</p>
+      <details class="ans">
+        <summary>Lihat kunci jawaban</summary>
+        <div class="ans-text">Pemberontakan bermotif ideologi menolak dasar/bentuk negara (misalnya ingin negara berbasis syariat Islam, bukan Pancasila), sedangkan pemberontakan bermotif ketimpangan daerah pada dasarnya menerima NKRI tetapi memprotes ketidakadilan alokasi pembangunan dan kewenangan antara pemerintah pusat dan daerah.</div>
+      </details>
+    </div>
+
+    <div class="q-item">
+      <span class="q-num">3</span><p class="q-text">Sebutkan dua isi pokok Dekrit Presiden 5 Juli 1959 dan jelaskan dampaknya terhadap sistem pemerintahan Indonesia.</p>
+      <details class="ans">
+        <summary>Lihat kunci jawaban</summary>
+        <div class="ans-text">Dua di antaranya: (1) pembubaran Konstituante dan (2) pemberlakuan kembali UUD 1945 menggantikan UUDS 1950. Dampaknya, Indonesia beralih dari sistem demokrasi parlementer ke sistem presidensial, namun dalam praktiknya kekuasaan presiden menjadi sangat dominan sehingga disebut periode "Demokrasi Terpimpin".</div>
+      </details>
+    </div>
+  </section>
+
+  <footer class="note">Rangkuman disusun untuk membantu belajar — tetap cek buku paket & sumber resmi untuk detail lengkap ya 📖</footer>
+</div>
+
+</body>
+</html>
